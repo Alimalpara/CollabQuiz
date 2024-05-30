@@ -1,4 +1,4 @@
-name : CollabQuiz
+name : CollabQuiz test
 
 on:
   pull_request:
