@@ -1,0 +1,36 @@
+name : CollabQuiz
+
+on:
+  pull_request:
+    branches : [ master ]
+  push:
+    branches : [master]
+
+jobs :
+  build:
+    runs-on : ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.1.5
+      - name : Setup Java JDK
+        uses: actions/setup-java@v4.2.1
+
+      - name: Build with Gradle
+        uses: gradle/actions@v3.3.2
+
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v4.3.3
+        with:
+          name: COllabQuiz.apk
+          path: app/build/outputs/apk/debug/app-debug.apk
+
+
+
+
+
+
+
+
+
+
+
