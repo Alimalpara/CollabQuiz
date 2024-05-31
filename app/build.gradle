@@ -30,7 +30,9 @@ android {
     }
     namespace 'com.alm.collabquiz'
 
-
+    lint {
+        baseline = file("lint-baseline.xml")
+    }
 }
 
 dependencies {
